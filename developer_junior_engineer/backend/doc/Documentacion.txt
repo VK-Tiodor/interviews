@@ -1,9 +1,23 @@
 Proceso:
-Lo primero es hacer un primer código en sucio que cumpla con la funcionalidad que pretendemos implementar, el cual más tarde refinaremos.
 
-Para empezar, hay que leer los datos de los CSV (1). Ahora que tenemos la lectura hecha y sabemos que funciona vamos a mejorar un poco el código.
+Lo primero es hacer un primer código en sucio que cumpla con la funcionalidad 
+que pretendemos implementar, el cual más tarde refinaremos.
 
+Para empezar, hay que leer los datos de los CSV (1). Ahora que tenemos la 
+lectura hecha y sabemos que funciona vamos a mejorar un poco el código.
 
+Hago un pequeño cambio en la manera de leer el CSV y utilizo el DictReader
+porque creo que este va a ser más legible y me va a facilitar la implementación
+
+He contemplado hacerlo utilizando numpy que es una librería para cálculos
+matemáticos matriciales. De momento, he optado por no hacerlo de esta manera ya 
+que los cálculos a realizar no son tan complejos y, además, los csv tienen 
+diferentes tipos de datos en cada columna y resultaría bastante laborioso 
+transformarlos a arrays de tipo numpy.
+
+He sufrido un par de tropiezos recordando cómo se programaba en python pero
+he conseguido terminar con los reportes 1 y 2. 
 
 Bibliografía:
 1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
+2. https://numpy.org/doc/stable/index.html
