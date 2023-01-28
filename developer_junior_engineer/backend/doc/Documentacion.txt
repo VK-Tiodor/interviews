@@ -1,0 +1,9 @@
+Proceso:
+Lo primero es hacer un primer código en sucio que cumpla con la funcionalidad que pretendemos implementar, el cual más tarde refinaremos.
+
+Para empezar, hay que leer los datos de los CSV (1).
+
+
+
+Bibliografía:
+1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
