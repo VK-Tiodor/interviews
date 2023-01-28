@@ -1,7 +1,7 @@
 Proceso:
 Lo primero es hacer un primer código en sucio que cumpla con la funcionalidad que pretendemos implementar, el cual más tarde refinaremos.
 
-Para empezar, hay que leer los datos de los CSV (1).
+Para empezar, hay que leer los datos de los CSV (1). Ahora que tenemos la lectura hecha y sabemos que funciona vamos a mejorar un poco el código.
 
 
 

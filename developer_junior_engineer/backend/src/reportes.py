@@ -6,28 +6,21 @@ import csv
 if len(sys.argv) < 4:
     print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
 
-customers = []
-#Leemos los ficheros y almacenamos la informacion
-with open(sys.argv[1], newline='') as customersFile:  
-    reader = csv.reader(customersFile)
-    #La primera línea (cabecera de la tabla) no nos interesa
-    reader.__next__()
-    for (id,firstname,lastname) in reader: #Convertimos los datos de listas a tuplas mientras leemos
-        customers += [(id,firstname,lastname)]
+def leerCSV(fileName):
+    rowsList = []
+    #Leemos los ficheros y almacenamos la informacion
+    with open(fileName, newline='') as file:  
+        reader = csv.reader(file)
+        #La primera línea (cabecera de la tabla) no nos interesa
+        reader.__next__()
+        for row in reader: 
+            rowsList += [tuple(row)] 
+    
+    return rowsList
 
-orders = []
-with open(sys.argv[2], newline='') as ordersFile:  
-    reader = csv.reader(ordersFile)
-    reader.__next__()
-    for (id,customer,products) in reader:
-        orders += [((id,customer,products))]
-
-products = []
-with open(sys.argv[3], newline='') as productsFile:  
-    reader = csv.reader(productsFile)
-    reader.__next__()
-    for (id,name,cost) in reader:
-        products += [(id,name,cost)]
+customers = leerCSV(sys.argv[1])
+orders =leerCSV (sys.argv[2])
+products = leerCSV(sys.argv[3])
 
 print(customers)
 print(orders)
