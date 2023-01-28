@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 import sys
 import csv
-import numpy as np
-
-#Comprobamos que se esten pasando los archivos csv
-if len(sys.argv) < 4:
-    print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
+import os
 
 #Funcion que devuelve las filas leidas de un csv en forma de diccionario
 #Return: 
@@ -16,13 +12,23 @@ if len(sys.argv) < 4:
 #]
 def leerCSV(fileName):
     rowsList = []
-    #Leemos los ficheros y almacenamos la informacion
+    print('Leyendo datos: ' + os.path.abspath(fileName))
     with open(fileName, newline='') as file:  
         reader = csv.DictReader(file)
         for row in reader: 
             rowsList += [row] 
     
     return rowsList
+
+#Funcion que escribe los datos de un diccionario en un archivo csv
+def escribirCSV(data, fieldNames, fileName):
+    fileName = '.\\reports\\' + fileName + '.csv'
+    with open(fileName, 'w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=fieldNames)
+        writer.writeheader()
+        writer.writerows(data)
+
+    print('Resultados almacenados en: ' + os.path.abspath(fileName))
 
 #Funcion que devuelve el total de cada pedido
 #Return: 
@@ -54,7 +60,7 @@ def report2(orders):
     product_customers_aux = {}
 
     for row in orders:
-        for product in row['products']:
+        for product in row['products'].split(' '):
             if product not in product_customers_aux: 
                 product_customers_aux[product] = [row['customer']]
             elif row['customer'] not in product_customers_aux[product]:
@@ -105,13 +111,25 @@ def report3(customers, orders, products):
 
     return customer_ranking
 
+#Comprobamos que se esten pasando los archivos csv
+if len(sys.argv) < 4:
+    print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
+    sys.exit(1)
+
 customers = leerCSV(sys.argv[1])
 orders = leerCSV(sys.argv[2])
 products = leerCSV(sys.argv[3])
+print('Lectura completa')
 
+print('Preparando reportes')
 order_prices = report1(orders, products)
-#print(order_prices)
 product_customers = report2(orders)
-#print(product_customers)
 customer_ranking = report3(customers, orders, products)
-#print(customer_ranking)
+print('Reportes listos')
+
+print('Almacenando resultados')
+escribirCSV(order_prices, ['id', 'total'], 'order_prices')
+escribirCSV(product_customers, ['id', 'customer_ids'], 'product_customers')
+escribirCSV(customer_ranking, ['id', 'name', 'lastname', 'total'], 'customer_ranking')
+
+print("¡Proceso finalizado!")

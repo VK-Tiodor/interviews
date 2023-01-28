@@ -31,7 +31,15 @@ No lo he comentado al principio, pero he decidido trabajar con diccionarios
 para facilitar el paso que me toca implementar a continuación, la escritura
 en el csv.
 
+La escritura en el csv me ha dado problemas porque no he tenido en cuenta la
+ruta relativa del fichero, he tenido que ver mejor como funcionan las rutas
+de ficheros(4).
+
+He añadido unos cuantos mensajes que aporten feedback acerca de como va el 
+proceso (útil para el usuario cuando los archivos son muy extensos). 
+
 Bibliografía:
 1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
 2. https://numpy.org/doc/stable/index.html
 3. https://www.freecodecamp.org/news/sort-dictionary-by-value-in-python/
+4. https://www.pythoncheatsheet.org/cheatsheet/file-directory-path
