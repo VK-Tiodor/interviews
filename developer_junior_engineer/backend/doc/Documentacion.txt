@@ -64,6 +64,10 @@ en la UPV en su día(11).
 He aprovechado para pulir el código, limpiar archivos de test y comentarlo 
 para explicar mejor que se hace en cada función.
 
+Me he pasado 2 horas intentando arreglar algo que ya funcionaba pero que no
+había iniciado usando el comando correctament... A veces pasa. La api ya está
+dockerizada correctamente.
+
 Bibliografía:
 1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
 2. https://numpy.org/doc/stable/index.html

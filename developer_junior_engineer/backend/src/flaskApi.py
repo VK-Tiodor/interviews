@@ -89,4 +89,4 @@ def download_file(filename):
 
 if __name__ == "__main__":
     #Usamos el puerto expuesto en el Dockerfile
-    api.run(debug=True, port=os.environ['PORT'], host='localhost')#
+    api.run(debug=False, port=os.environ['PORT'], host='0.0.0.0')
