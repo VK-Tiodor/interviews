@@ -61,6 +61,9 @@ ejecutar la api en docker.
 No recuerdo muy bien como trabajar con Docker, repasaré los temas que estudié
 en la UPV en su día(11). 
 
+He aprovechado para pulir el código, limpiar archivos de test y comentarlo 
+para explicar mejor que se hace en cada función.
+
 Bibliografía:
 1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
 2. https://numpy.org/doc/stable/index.html

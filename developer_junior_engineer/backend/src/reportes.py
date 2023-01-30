@@ -78,27 +78,3 @@ def report3(customers, orders, products):
                             }]
 
     return customer_ranking
-
-##Comprobamos que se esten pasando los archivos csv
-#if len(sys.argv) < 4:
-#    print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
-#    sys.exit(1)
-#
-#customers = leerCSV(sys.argv[1])
-#orders = leerCSV(sys.argv[2])
-#products = leerCSV(sys.argv[3])
-#print('Lectura completa')
-#
-#print('Preparando reportes')
-#order_prices = report1(orders, products)
-#product_customers = report2(orders)
-#customer_ranking = report3(customers, orders, products)
-#print('Reportes listos')
-#
-#print('Almacenando resultados')
-#escribirCSV(order_prices, ['id', 'total'], 'order_prices')
-#escribirCSV(product_customers, ['id', 'customer_ids'], 'product_customers')
-#escribirCSV(customer_ranking, ['id', 'name', 'lastname', 'total'], 'customer_ranking')
-#
-#print("¡Proceso finalizado!")
-#
