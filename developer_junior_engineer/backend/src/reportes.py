@@ -1,35 +1,3 @@
-#!/usr/bin/env python
-import sys
-import csv
-import os
-
-#Funcion que devuelve las filas leidas de un csv en forma de diccionario
-#Return: 
-#[
-# {(colName:val)_1, ..., (colName:val)_cols}_1, 
-# ... ,
-# {(colName:val)_1, ..., (colName:val)_n}_rows
-#]
-def leerCSV(fileName):
-    rowsList = []
-    print('Leyendo datos: ' + os.path.abspath(fileName))
-    with open(fileName, newline='') as file:  
-        reader = csv.DictReader(file)
-        for row in reader: 
-            rowsList += [row] 
-    
-    return rowsList
-
-#Funcion que escribe los datos de un diccionario en un archivo csv
-def escribirCSV(data, fieldNames, fileName):
-    fileName = '.\\reports\\' + fileName + '.csv'
-    with open(fileName, 'w', newline='') as file:
-        writer = csv.DictWriter(file, fieldnames=fieldNames)
-        writer.writeheader()
-        writer.writerows(data)
-
-    print('Resultados almacenados en: ' + os.path.abspath(fileName))
-
 #Funcion que devuelve el total de cada pedido
 #Return: 
 #[
@@ -111,25 +79,26 @@ def report3(customers, orders, products):
 
     return customer_ranking
 
-#Comprobamos que se esten pasando los archivos csv
-if len(sys.argv) < 4:
-    print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
-    sys.exit(1)
-
-customers = leerCSV(sys.argv[1])
-orders = leerCSV(sys.argv[2])
-products = leerCSV(sys.argv[3])
-print('Lectura completa')
-
-print('Preparando reportes')
-order_prices = report1(orders, products)
-product_customers = report2(orders)
-customer_ranking = report3(customers, orders, products)
-print('Reportes listos')
-
-print('Almacenando resultados')
-escribirCSV(order_prices, ['id', 'total'], 'order_prices')
-escribirCSV(product_customers, ['id', 'customer_ids'], 'product_customers')
-escribirCSV(customer_ranking, ['id', 'name', 'lastname', 'total'], 'customer_ranking')
-
-print("¡Proceso finalizado!")
+##Comprobamos que se esten pasando los archivos csv
+#if len(sys.argv) < 4:
+#    print('Usage: %s <customers.csv> <orders.csv> <products.csv>' % sys.argv[0])
+#    sys.exit(1)
+#
+#customers = leerCSV(sys.argv[1])
+#orders = leerCSV(sys.argv[2])
+#products = leerCSV(sys.argv[3])
+#print('Lectura completa')
+#
+#print('Preparando reportes')
+#order_prices = report1(orders, products)
+#product_customers = report2(orders)
+#customer_ranking = report3(customers, orders, products)
+#print('Reportes listos')
+#
+#print('Almacenando resultados')
+#escribirCSV(order_prices, ['id', 'total'], 'order_prices')
+#escribirCSV(product_customers, ['id', 'customer_ids'], 'product_customers')
+#escribirCSV(customer_ranking, ['id', 'name', 'lastname', 'total'], 'customer_ranking')
+#
+#print("¡Proceso finalizado!")
+#

@@ -3,7 +3,7 @@ Proceso:
 Lo primero es hacer un primer código en sucio que cumpla con la funcionalidad 
 que pretendemos implementar, el cual más tarde refinaremos.
 
-Para empezar, hay que leer los datos de los CSV (1). Ahora que tenemos la 
+Para empezar, hay que leer los datos de los CSV(1). Ahora que tenemos la 
 lectura hecha y sabemos que funciona vamos a mejorar un poco el código.
 
 Hago un pequeño cambio en la manera de leer el CSV y utilizo el DictReader
@@ -38,8 +38,39 @@ de ficheros(4).
 He añadido unos cuantos mensajes que aporten feedback acerca de como va el 
 proceso (útil para el usuario cuando los archivos son muy extensos). 
 
+Todo lo que está hecho hasta ahora ha sido testeado y he comprobado que
+funciona correctamente. He aprovechado para pulir y refinar el código actual,
+pero nada del otro mundo, he agrupado las funciones para un mismo propósito 
+por archivos, a modo de librerías. Voy a invertir tiempo en investigar sobre
+como convertir el script en una api(5).
+
+Según he podido leer dos de las librerías más usadas para crear apis son Flask
+y FastApi. Flask es un framework bastante más completo que también permite 
+crear una interfaz de usuario. En un principio no sé si voy a poder incorporar
+la interfaz al proyecto a tiempo, pero por si acaso voy a optar por este 
+framework.
+
+He investigado al respecto sobre como implementar la subida y la descarga de
+archivos por medio de Flask(6-10). 
+
+He implementado la api usando flask y una interfaz de usuario de lo más
+simple. La interfaz se puede mejorar dandole más cariño al html e
+incorporando css, pero por ahora la dejo así. Mi siguiente objetivo es
+ejecutar la api en docker. 
+
+No recuerdo muy bien como trabajar con Docker, repasaré los temas que estudié
+en la UPV en su día(11). 
+
 Bibliografía:
 1. https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907
 2. https://numpy.org/doc/stable/index.html
 3. https://www.freecodecamp.org/news/sort-dictionary-by-value-in-python/
 4. https://www.pythoncheatsheet.org/cheatsheet/file-directory-path
+5. https://anderfernandez.com/blog/como-crear-api-en-python/#C%C3%B3mo-crear-una-API-en-Python-con-Flask
+6. https://flask.palletsprojects.com/en/2.2.x/api/
+7. https://flask.palletsprojects.com/en/2.2.x/quickstart/
+8. https://flask.palletsprojects.com/en/2.2.x/patterns/fileuploads/
+9. https://flask.palletsprojects.com/en/2.2.x/config/
+10. https://www.youtube.com/watch?v=BP8ulGbu1fc
+11. Temario de la UPV
+12. https://www.twilio.com/blog/environment-variables-python

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de reportes</title>
+</head>
+<body>
+<div align="center">
+    <h1> Reportes generados </h1>
+    {% for filename in files %}
+    <a href="{{ url_for('download_file', filename=filename) }}"> {{ filename }}</a><br />
+    {% endfor %}
+</div>
+</body>
+</html>

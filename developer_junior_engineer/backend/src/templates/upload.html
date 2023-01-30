@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de reportes</title>
+</head>
+<body>
+<div align="center">
+    <h1>Sube los ficheros CSV</h1>
+    <form method=post enctype=multipart/form-data>
+        <h3>Customers</h3>
+        <p><input type=file name=customers></p>
+        <h3>Orders</h3>
+        <p><input type=file name=orders></p>
+        <h3>Products</h3>
+        <p><input type=file name=products></p>
+        <br/>
+        <p><input formaction='/upload' type=submit value="Subir archivos"></p>
+    </form>
+    <br/>
+</div>
+</body>
+</html>
