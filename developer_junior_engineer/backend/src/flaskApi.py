@@ -69,7 +69,7 @@ def download_files():
 
     #Generamos los reportes
     order_prices = rp.report1(orders, products)
-    product_customers = rp.report2(orders)
+    product_customers = rp.report2(orders, products)
     customer_ranking = rp.report3(customers, orders, products)
 
     #Guardamos los reportes en la carpeta de descargas
